@@ -2,26 +2,31 @@
   "name": "anibalsantosgomez.film",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize": "node src/scripts/optimize.js --run --sourceFolder 'public/media' --targetFolder 'public/media' --inputFormats 'jpg' --inputFormats 'jpeg' --outputFormats 'jpg' --outputFormats 'webp' --widths '640' --widths '768' --widths '1024'"
   },
   "dependencies": {
+    "next": "14.0.2",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.2"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "eslint": "^8",
-    "eslint-config-next": "14.0.2"
+    "eslint-config-next": "14.0.2",
+    "globby": "^14.0.0",
+    "minimist": "^1.2.8",
+    "postcss": "^8",
+    "sharp": "^0.32.6",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
